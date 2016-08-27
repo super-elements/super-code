@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <title>super-code demo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+
+    <script src="../../codemirror/lib/codemirror.js"></script>
+    <script src="../../codemirror/mode/javascript/javascript.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../codemirror/lib/codemirror.css" />
+
+
+    <link rel="import" href="../super-code.html">
+
+    <style is="custom-style" include="demo-pages-shared-styles">
+    </style>
+  </head>
+  <body>
+    <template is="dom-bind">
+      <super-code value="{{myValue}}" mode="javascript"></super-code>
+      <textarea id="mytextarea" value="{{myValue::input}}"></textarea>
+
+    </template>
+
+    <div class="vertical-section-container centered">
+      <h3>Basic super-code Demo</h3>
+      <demo-snippet>
+        <template is="dom-bind">
+          <super-code value="{{myValue}}"></super-code>
+          <textarea id="mytextarea" value="{{myValue::input}}"></textarea>
+        </template>
+      </demo-snippet>
+    </div>
+
+    <div class="vertical-section-container centered">
+      <h3>Textarea Demo</h3>
+      <demo-snippet>
+        <template>
+
+        </template>
+      </demo-snippet>
+    </div>
+
+
+  </body>
+</html>
