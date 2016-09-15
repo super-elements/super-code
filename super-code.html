@@ -1,7 +1,17 @@
-<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../polymer/polymer.html" />
 <script src="../codemirror/lib/codemirror.js"></script>
 <script src="../codemirror/mode/javascript/javascript.js"></script>
 <link rel="stylesheet" type="text/css" href="../codemirror/lib/codemirror.css" />
+
+<!--For Code Folding -->
+<link rel="stylesheet" type="text/css" href="../codemirror/addon/fold/foldgutter.css" />
+<script src="../codemirror/addon/fold/foldcode.js"></script>
+<script src="../codemirror/addon/fold/foldgutter.js"></script>
+<script src="../codemirror/addon/fold/brace-fold.js"></script>
+<script src="../codemirror/addon/fold/comment-fold.js"></script>
+<script src="../codemirror/addon/fold/indent-fold.js"></script>
+<script src="../codemirror/addon/fold/xml-fold.js"></script>
+
 
 <!--
 `super-code`
@@ -100,7 +110,11 @@
         this.editor = CodeMirror.fromTextArea(this.$.textarea, {
 					lineNumbers: true,
 					value: self.value,
-          mode: self.mode
+          mode: self.mode,
+
+          // For Code Folding
+          foldGutter: true,
+          gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
 				});
 
         // As new code is written on the editor, update the `value` property of the
