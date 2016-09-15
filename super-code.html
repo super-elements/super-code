@@ -1,6 +1,8 @@
 <link rel="import" href="../polymer/polymer.html" />
 <script src="../codemirror/lib/codemirror.js"></script>
 <script src="../codemirror/mode/javascript/javascript.js"></script>
+<script src="../codemirror/mode/xml/xml.js"></script>
+
 <link rel="stylesheet" type="text/css" href="../codemirror/lib/codemirror.css" />
 
 <!--For Code Folding -->
@@ -35,19 +37,6 @@
     Polymer({
 
       is: 'super-code',
-      // get value () {
-      //   if (this.editor)
-      //     return this.editor.getValue();
-      //
-      // },
-      //
-      // set value (val) {
-      //   if (this.editor){
-      //     this.editor.setValue(val)
-      //   }
-      // },
-
-
       properties: {
         value: {
           type: String,
