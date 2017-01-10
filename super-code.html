@@ -3,10 +3,6 @@
 <script src="../codemirror/mode/javascript/javascript.js"></script>
 <script src="../codemirror/mode/xml/xml.js"></script>
 
-<link rel="stylesheet" type="text/css" href="../codemirror/lib/codemirror.css" />
-
-<!--For Code Folding -->
-<link rel="stylesheet" type="text/css" href="../codemirror/addon/fold/foldgutter.css" />
 <script src="../codemirror/addon/fold/foldcode.js"></script>
 <script src="../codemirror/addon/fold/foldgutter.js"></script>
 <script src="../codemirror/addon/fold/brace-fold.js"></script>
@@ -23,6 +19,10 @@
 -->
 
 <dom-module id="super-code">
+  <link rel="import" type="css" href="../codemirror/lib/codemirror.css">
+  <!--For Code Folding -->
+  <link rel="import" type="css" href="../codemirror/addon/fold/foldgutter.css">
+  
   <template>
     <style>
       :host {
