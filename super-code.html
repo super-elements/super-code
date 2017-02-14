@@ -12,9 +12,12 @@
 
 
 <!--
-`super-code`
+`super-code` is a text editor, auto indentation with number of languages mode.
+uses concept of codemirror for ease of implementation.
 
-
+if user want the code in javascript colouring code then simple add `mode=javascript`
+Example
+<super-code mode="javascript"></super-code>
 @demo demo/index.html
 -->
 
@@ -22,7 +25,7 @@
   <link rel="import" type="css" href="../codemirror/lib/codemirror.css">
   <!--For Code Folding -->
   <link rel="import" type="css" href="../codemirror/addon/fold/foldgutter.css">
-  
+
   <template>
     <style>
       :host {
