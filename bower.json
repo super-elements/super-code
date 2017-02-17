@@ -1,5 +1,6 @@
 {
   "name": "super-code",
+  "version": "v0.0.1",
   "main": "super-code.html",
   "license": "Apache-2.0",
   "dependencies": {
