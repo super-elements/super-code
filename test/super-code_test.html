@@ -12,19 +12,88 @@
   </head>
   <body>
 
-    <test-fixture id="basic">
+    <test-fixture id="super-code-fixture">
       <template>
-        <super-code></super-code>
+        <super-code>
+        <h1>super-code</h1>
+      </super-code>
       </template>
     </test-fixture>
+<script>
 
-    <script>
       suite('super-code', function() {
-
-        test('instantiating the element works', function() {
-          var element = fixture('basic');
-          assert.equal(element.is, 'super-code');
+        var myEl;
+        setup(function() {
+          myEl = fixture('super-code-fixture');
         });
+        test('instantiating the element works', function() {
+          var element = fixture('super-code-fixture');
+          assert.equal(myEl.is, 'super-code');
+        });
+
+        test('checking the values of indentWithTabs property', function() {
+          myEl.setAttribute('indentWithTabs',"false");
+          assert.equal(myEl.indentWithTabs,false);
+        });
+
+        test('checking the values of false values of indentWithTabs property', function() {
+          myEl.setAttribute('indentWithTabs',"true");
+          expect(false).to.not.equal('true');
+        });
+
+        test('checking the values of default tabsize property', function() {
+          myEl.setAttribute('tabsize',4);
+          expect(4).to.equal(myEl.tabSize);
+        });
+        test('checking the values of null tabsize property', function() {
+          myEl.setAttribute('tabsize','');
+          expect(NaN).to.not.equal(myEl.tabSize);
+        });
+
+        test('checking the value property', function() {
+          myEl.value = '<div>My name is Sudhir</div>';
+          assert.equal(myEl.value,'<div>My name is Sudhir</div>');
+        });
+
+        test('checking the default mode property', function() {
+          myEl.setAttribute('mode','javascript');
+          assert.equal(myEl.mode,'javascript');
+        });
+
+        test('checking the null or undefined mode property', function() {
+          myEl.setAttribute('mode','');
+          expect(NaN).to.not.equal(myEl.tabSize);
+        });
+
+        test('checking the isvalue property', function() {
+          myEl.isValue = '<div>My name is Sudhir</div>';
+          assert.equal(myEl.isValue,'<div>My name is Sudhir</div>');
+        });
+
+        test('checking the boolean values of isValue property', function() {
+          myEl.isValue = '<div>My name is Sudhir</div>';
+          assert.equal(myEl.isValue,'<div>My name is Sudhir</div>');
+
+        });
+
+        test('checking the values of default  isValue property', function() {
+          myEl.isValue=false;
+            assert.equal(myEl.isValue,false);
+            expect(false).equal(myEl.isValue);
+        });
+
+        test('checking the  assigned values of isValue property', function() {
+          myEl.isValue=true;
+          expect(false).to.not.equal(myEl.isValue);
+        });
+
+        test('checking if isValue property is null', function() {
+          myEl.isValue='';
+          expect(NaN).to.not.equal(myEl.isValue);
+        });
+
+
+
 
       });
     </script>
