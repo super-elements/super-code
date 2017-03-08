@@ -1,28 +1,46 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
 <link rel="import" href="../polymer/polymer.html" />
 <script src="../codemirror/lib/codemirror.js"></script>
 <script src="../codemirror/mode/javascript/javascript.js"></script>
 <script src="../codemirror/mode/xml/xml.js"></script>
-
 <script src="../codemirror/addon/fold/foldcode.js"></script>
 <script src="../codemirror/addon/fold/foldgutter.js"></script>
 <script src="../codemirror/addon/fold/brace-fold.js"></script>
 <script src="../codemirror/addon/fold/comment-fold.js"></script>
 <script src="../codemirror/addon/fold/indent-fold.js"></script>
 <script src="../codemirror/addon/fold/xml-fold.js"></script>
-
-
 <!--
-`super-code`
+  `super-code`is a text editor . It is specialized for editing code,
+  and comes with a number of language modes and addons
+  that implement more advanced editing functionality.is a text editor,
+  auto indentation with number of languages mode.
 
+  Use the concept of codemirror for ease of implementation. Instead of writing code in javascript you just
+  use a web-component.
 
-@demo demo/index.html
+  If user want the code in javascript colouring code then simple add `mode=javascript`
+
+Example:
+
+    <super-code mode="javascript"></super-code>
+
+  @demo demo/index.html
+  @hero hero.svg
 -->
-
 <dom-module id="super-code">
   <link rel="import" type="css" href="../codemirror/lib/codemirror.css">
   <!--For Code Folding -->
   <link rel="import" type="css" href="../codemirror/addon/fold/foldgutter.css">
-  
+
   <template>
     <style>
       :host {
