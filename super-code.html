@@ -2,6 +2,9 @@
 <script src="../codemirror/lib/codemirror.js"></script>
 <script src="../codemirror/mode/javascript/javascript.js"></script>
 <script src="../codemirror/mode/xml/xml.js"></script>
+<script src="../codemirror/mode/css/css.js"></script>
+<script src="./formatting.js"></script>
+<script src="../codemirror/mode/htmlmixed/htmlmixed.js"></script>
 
 <script src="../codemirror/addon/fold/foldcode.js"></script>
 <script src="../codemirror/addon/fold/foldgutter.js"></script>
@@ -22,7 +25,7 @@
   <link rel="import" type="css" href="../codemirror/lib/codemirror.css">
   <!--For Code Folding -->
   <link rel="import" type="css" href="../codemirror/addon/fold/foldgutter.css">
-  
+
   <template>
     <style>
       :host {
@@ -55,7 +58,7 @@
          */
         mode: {
           type: String,
-          value: 'javascript'
+          value: 'htmlmixed'
         },
         /**
          * The theme to style the editor with. You must make sure the CSS file defining the corresponding .cm-s-[name] styles is loaded
@@ -123,6 +126,8 @@
       _valueChanged: function (newValue, oldValue) {
         if (this.editor && (this._isValueChanged)){
           this.editor.setValue(newValue)
+          this.editor.autoFormatRange({ch:0, line:0}, {ch: this.value.length, line: this.editor.lineCount()});
+          this.editor.setSelection({ch:this.value.length, line:this.editor.lineCount()}, {ch:this.value.length, line:this.editor.lineCount()});
         }
       }
     });
