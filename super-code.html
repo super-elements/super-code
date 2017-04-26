@@ -123,11 +123,15 @@
         this.editor.refresh();
 
       },
+
+      indentFormat: function(){
+        this.editor.autoFormatRange({ch:0, line:0}, {ch: this.value.length, line: this.editor.lineCount()});
+        this.editor.setSelection({ch:this.value.length, line:this.editor.lineCount()}, {ch:this.value.length, line:this.editor.lineCount()});
+      },
+
       _valueChanged: function (newValue, oldValue) {
         if (this.editor && (this._isValueChanged)){
           this.editor.setValue(newValue)
-          this.editor.autoFormatRange({ch:0, line:0}, {ch: this.value.length, line: this.editor.lineCount()});
-          this.editor.setSelection({ch:this.value.length, line:this.editor.lineCount()}, {ch:this.value.length, line:this.editor.lineCount()});
         }
       }
     });
