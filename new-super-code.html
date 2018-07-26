@@ -1,0 +1,48 @@
+<link rel="import" href="../polymer/polymer.html" />
+<script src="../codemirror/lib/codemirror.js"></script>
+<script src="../codemirror/mode/javascript/javascript.js"></script>
+<!-- <script src="../codemirror/mode/xml/xml.js"></script> -->
+
+<link rel="stylesheet" type="text/css" href="../codemirror/lib/codemirror.css" />
+
+<!--For Code Folding -->
+<!-- <link rel="stylesheet" type="text/css" href="../codemirror/addon/fold/foldgutter.css" />
+<script src="../codemirror/addon/fold/foldcode.js"></script>
+<script src="../codemirror/addon/fold/foldgutter.js"></script>
+<script src="../codemirror/addon/fold/brace-fold.js"></script>
+<script src="../codemirror/addon/fold/comment-fold.js"></script>
+<script src="../codemirror/addon/fold/indent-fold.js"></script>
+<script src="../codemirror/addon/fold/xml-fold.js"></script> -->
+
+
+<!--
+`super-code`
+
+
+@demo demo/index.html
+-->
+
+<dom-module id="super-code">
+  <template>
+    <textarea id="textarea"></textarea>
+
+  </template>
+
+  <script>
+  Polymer({
+ready: function () {
+  // console.log(document.querySelector('#textarea'));
+  var cm = CodeMirror.fromTextArea(document.querySelector('textarea'), {
+    lineNumbers: true,
+    // value: '"hello lint"',
+    // mode: 'javascript',
+    // gutters: ['CodeMirror-lint-markers'],
+    // lint: true,
+    // width: 300,
+    // height: 300
+  });
+  console.log(cm);
+}
+});
+  </script>
+</dom-module>
